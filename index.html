@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style/style.css">
+    <title>gifOS-Page</title>
+</head>
+<body onload="modificaHoy()">
+    <!--Header-->
+    <header class="head">
+        <p>¡Bienvenidos/as a Gifos.com -----Donde los gifs están.//////Numero de visitas: 1225</p>
+    </header>
+
+    <!--Seccion Button-->
+    <section class="button">
+        <div class="container">
+            <img src="recursos/gifOF_logo.png" alt="logo" id="logo">
+            <div class="div-lst">
+               <button class="btn first nigth" id="a" onclick="location.href='captura.html'">Crear Gifos</button>
+               <div class="despegable">
+                    <ul class="lista">
+                        <li>
+                            <button class="btn nigth btn-barra" onclick="desplegaBtn()">Elegir Tema <span class="barra"><img src="recursos/forward.svg" alt="logo" id="drop"></span></button>
+                        </li>
+                        <li class="oculta" id="oculta">    
+                            <div class="ilD">
+                                <button onclick="cambiarDay()" class="buttonD">Sailor Day</button>
+                            </div>
+                            <div class="ilD">
+                                <button onclick="cambiarNigth()" class="buttonD">Sailor Night</button>
+                            </div>
+                        </li>
+                    </ul>
+               </div>
+               <a href="captura.html" class="nigth aBorder"><u>M</u>is Gifos</a>
+            </div>
+        </div>
+
+    </section>
+
+    <!--Seccion Busqueda-->
+    <section class="busqueda">
+        <div class="container">
+            <div class="box-busca">
+                <p>Buscar</p>
+            </div>
+            <div class="input">
+                <input type="text" placeholder="Busqueda" id="inputS" onkeydown="modificaAutocomplete()" ><!--onkeydown="llamadaSugerenciaBusqueda();"-->
+                <button onclick="modificaSearch()" id="btnBuscar"><img src="recursos/lupa.svg" alt="lupa"> Buscar</button>
+            </div>
+            <div class="sugerencias" id="divSugerencia">
+                <div class="resultado" onclick="seleccionTerm(event)" >
+                    <p class="result"></p>
+                </div>
+                <div class="resultado" onclick="seleccionTerm(event)" >
+                    <p class="result"></p>
+                </div>
+                <div class="resultado" onclick="seleccionTerm(event)" >
+                    <p class="result"></p>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+
+    <!--Section Hoy-->
+    <section class="hoy" id="containerHoy">
+        <div class="container">
+            <p class="text-hoy">Hoy te sugerimos</p>
+        </div>
+
+        <div class="container container-video" >
+
+            <div class="video">
+                <div class="head-video">
+                    <p>#hastag</p>
+                    <img src="recursos/close.svg" alt="cierre" class="close" id="x" onclick="btnClose (id, event)">
+                </div>
+                <img src="#" class="img" alt="img-prueba">
+                <button onclick="verMas(id)" id="0">Ver más...</button>
+            </div>
+
+            <div class="video">
+                <div class="head-video">
+                    <p>#hastag</p>
+                    <img src="recursos/close.svg" alt="cierre" class="close" id="b" onclick="btnClose (id, event)">
+                </div>
+                <img src="#" class="img" alt="img-prueba">
+                <button onclick="verMas(id)" id="1">Ver más...</button>
+            </div>
+
+            <div class="video">
+                <div class="head-video">
+                    <p>#hastag</p>
+                    <img src="recursos/close.svg" alt="cierre" class="close" id="c" onclick="btnClose (id, event)">
+                </div>
+                <img src="#" class="img" alt="img-prueba">
+                <button onclick="verMas(id)" id="2">Ver más...</button>
+            </div>
+
+            <div class="video">
+                <div class="head-video">
+                    <p>#hastag</p>
+                    <img src="recursos/close.svg" alt="cierre" class="close" id="d" onclick="btnClose (id,event)">
+                </div>
+                <img src="#" class="img" alt="img-prueba">
+                <button onclick="verMas(id)" id="3">Ver más...</button>
+            </div>
+        </div>
+    </section>
+
+    <!--Seccion Tendencias-->
+    <section class="tendencias" >
+        <div class="container">
+            <p class="text-hoy" id="texTendencia">Tendencias--</p>
+        </div>
+        <div class="container container-tendencias" id="container-tendencias">
+
+        </div>
+    </section>
+    <script src="script/script.js"></script>
+</body>
+</html>

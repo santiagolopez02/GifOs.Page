@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GifOs-Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style/style.css">
+
+</head>
+<body onload="muestraCreados()" id="body">
+    <header class="head">
+        <p>¡Bienvenidos/as a Gifos.com -----Donde los gifs están.//////Numero de visitas:<span class="contador"></span></p>
+    </header>
+
+    <section class="captura">
+        <div class="container">
+            <a href="index.html"><img src="recursos/arrow.svg" alt="arrow" ></a>
+            <img src="recursos/gifOF_logo.png" alt="logo" id="logoCaptura">
+        </div>
+    </section>
+    
+    <main>
+    <section class="crear" id="crear" >
+        <div class="container">
+            <div class="elemento-crear">
+                <div class="box-busca" >
+                    <p>Crear tu gif</p>
+                </div>
+                <div class="indicaciones" >
+                    
+                    <div class="text-indicaciones">
+                        <img src="recursos/windowimg.png" alt="">
+                        <div>
+                            <h3>Aqui puedes crear tus propios gifos</h3>
+                            <br>
+                            <p>Crear tu <strong>Gifos</strong> es muy facil, graba cualquier imagen con tu camara y obtén gifos<br> personalizados. Los pasos para crear tu guifo son:</p>
+                            <br>
+                            <p><strong>1)</strong> Dar permiso para el uso de la camara (solo en tiempo de ejecucion)</p>
+                            <br>
+                            <p><strong>2)</strong> Captura tu momento guifo</p>
+                            <br>
+                            <p><strong>3)</strong> Revisar el momento</p>
+                            <br>
+                            <p><strong>4)</strong> Listo para subir y compartir!</p>
+                            <br>    
+                            <p>¿Queres comenzar a crear tus <strong>Gifos</strong> ahora ?</p>
+                        </div>
+                    </div>
+                    <div class="btn-crear">
+                           <button>Cancelar</button>
+                           <button onclick="comenzarCaptura()">Comenzar</button> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Section captura-->
+    <section class="none video-captura"  id="captura">
+        <div class="container">
+            <div class="containerVideo">
+                <div class="box-busca box-title" >
+                    <p>Un Chequeo Antes De Empezar</p>
+                    <img src="recursos/close.svg" alt="close">
+                </div>
+                <video src="#" id="video1"></video>
+                <div class="btn-captura" id="btn-captura">
+                    <button class="btn-cap" onclick="comenzarGrabar()" id="capturar"><span class="span-listo"><img src="recursos/camera.svg" alt="logo" id="camara"></span><span class="span-cap">Capturar</span></button> 
+                </div>
+                <div class="none btn-cronometro" id="btn-cronometro">
+                    <div class="cronometro">
+                        <p id="timer"></p>
+                    </div>
+                    <button class="btn-listo" onclick="detenerRecording()" id="btnL"><span class="span-listo"><img src="recursos/recording.svg" alt="logo"></span><span class="span-cap">Listo</span></button> 
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+
+<!--Section subir-->
+    <section class="none video-captura" id="subir" >
+        <div class="container">
+            <div class="containerVideo">
+                <div class="box-busca box-title">
+                    <p>Vista previa</p>
+                    <img src="recursos/close.svg" alt="close">
+                </div>
+                
+                <img src="#" alt="mi"  class="img-mia" id="video2">
+                <div class="btn-cronometro">
+                    <div class="cronometro">
+                        <p class="timer"></p>
+                    </div>
+                    <div class="botones">
+                        <button  class="btn-listo btn-repetir" onclick="repeatCaptura()" id="repetir">Repetir Captura</button> 
+                        <button  class="btn-cap btn-repetir" onclick="EnviarGif()" id="btnSubir">Subir Gifo</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Section progress-->
+
+    <section class="none video-captura" id="progress">
+        <div class="container">
+            <div class="containerVideo">
+                <div class="box-busca box-title" >
+                    <p>Subiendo Gifo</p>
+                    <img src="recursos/close.svg" alt="close">
+                </div>
+                <div class="div-progress">
+                    <img src="recursos/globe_img.png" alt="globo">
+                    <p class="pFirst"><strong >Estamos subiendo tu Gifo</strong></p>
+                    <div class="div-barra">
+                        <div id="barra" class="barra"></div>
+                      </div>
+                    <p class="pSec">Tiempor restante: <span class="timer"></span></p>
+                </div>
+                
+                <div class="btn-captura">
+                    <button class="btn-cancelar" onclick="abortFetching()">Cancelar</button> 
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!--Section Exito-->
+        <section class="none video-captura" id="exito" >
+            <div class="container">
+                <div class="containerVideo">
+                    <div class="box-busca box-title" >
+                        <p>Gifo Subido con Éxito</p>
+                        <img src="recursos/close.svg" alt="close">
+                    </div>
+                    <div class="exito">
+                        <img src="#" class="video-exito" id="video3" alt="img">
+                        <div class="exito-btn">
+                            <p><strong>Gifo creado con exito</strong></p>
+                            <button class="btn-ex" onclick="copyUrl()">Copiar enlace de Gifo</button>
+                            <button class="btn-ex" onclick="descargarGif()">Descargar Gifo</button>
+                        </div>
+                    </div>
+                    <div class="btn-captura">
+                        <button class="btn-salir" onclick="btnListo()">Listo</button> 
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!--Section mis gif-->
+    <section class="tendencias">
+        <div class="container">
+            <p class="text-hoy">Mis Gifos</p>
+        </div>
+        <div class="container container-mias" id="misGifos">
+            
+        </div>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/RecordRTC/5.5.6/RecordRTC.js"></script>
+    <script src="script/script.js"></script>
+    <script src="script/captura.js"></script>
+</body>
+</html>
